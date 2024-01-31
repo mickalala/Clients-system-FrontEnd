@@ -28,6 +28,7 @@ const ResetStyle = createGlobalStyle`
 	}
 	body {
 		line-height: 1;
+		padding:20px;
 	}
 	ol, ul {
 		list-style: none;
@@ -51,6 +52,13 @@ const ResetStyle = createGlobalStyle`
     }
 	*{
 		box-sizing:border-box;
+		padding:20px;
+		--lightblue: #7c9dfb;
+        --lightblue-purple: #a7b1f9;
+        --lightpurple: #cec8f7;
+        --whitepurple: #f1e4f4;
+        --softwhite: #fffaf3;
+        --black: #111;
 	}
 `
 

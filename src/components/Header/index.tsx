@@ -6,8 +6,8 @@ export default function Header() {
 
         < HeaderContainer >
             <Logo>
+                <img src="/undraw_flower.svg" alt="imageMenu" />
                 <Link to={"/"}>
-                    <img src="/undraw_flower.svg" alt="imageMenu" />
                     <h1> lilac</h1>
                 </Link>
             </Logo>
@@ -21,9 +21,10 @@ export default function Header() {
 }
 
 const HeaderContainer = styled.header`
-   position:fixed;
-   width:100%;
-   min-height:70px;
+   border-radius:5px;
+   align-self:center;
+   width:100% ;
+   min-height:80px;
    background-color:var(--lightblue);
    display: flex;
    justify-content: space-around;
@@ -34,12 +35,16 @@ const HeaderContainer = styled.header`
    }
 `
 const Logo = styled.div`  
-    font-size: 40px;
+    font-size: 50px;
+    display:flex;
 `
 const Menu = styled.div`  
    a:hover{
-    color:var(--softwhite)
-   }
-   font-size: 30px;
-   
+    color:var(--softwhite); 
+   } 
+   a{
+    font-size: 26px;
+    padding:10px;
+    font-family: 'Bitter';
+   }   
 `
