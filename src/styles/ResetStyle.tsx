@@ -47,8 +47,8 @@ const ResetStyle = createGlobalStyle`
 	}
 	
 	input::placeholder {
-       color:  #DBDBDB;
-	   padding-left:11px;
+       color:  var(--lightblue-purple);
+	   /* padding-left:11px; */
     }
 	*{
 		box-sizing:border-box;
@@ -59,6 +59,7 @@ const ResetStyle = createGlobalStyle`
         --whitepurple: #f1e4f4;
         --softwhite: #fffaf3;
         --black: #111;
+		font-family:'Bitter';
 	}
 `
 
