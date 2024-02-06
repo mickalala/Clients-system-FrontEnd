@@ -20,7 +20,7 @@ export default function Routediv() {
 
     return (
     <>
-        <button onClick={()=>setOpen(!open)}> dist</button>
+        <button onClick={()=>setOpen(!open)}> Calcular rota</button>
        {open==true && <MainContainer >
             <h1>Rota calculada da primeira parada até a ultima antes de voltar à sede:</h1>
             {route.map((s) =>
