@@ -7,11 +7,11 @@ export default function ClientsList() {
 
     const [clientsA, setClients] = useState([]);
     const [form, setForm] = useState({ value: "" })
+    const [filteredClient, setFilteredClient] = useState([]);
 
     useEffect(() => {
         axios.get(`https://clientserviceapi.onrender.com/clients`)
             .then((answer) => {
-                console.log(answer.data)
                 setClients(answer.data)
             }).catch((error) => console.log(error))
     }, [])
@@ -24,20 +24,20 @@ export default function ClientsList() {
     }
     function sendForm(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         e.preventDefault()
-        // let filter = prompt("Qual filtro(username, phone, email) você está utilizando?")
-        axios.get(`https://clientserviceapi.onrender.com/filter`,)
+        let filter = prompt("Qual filtro(username, phone, email) você está utilizando?")
+        axios.get(`https://clientserviceapi.onrender.com/client?filter=${filter}&value=${form.value}`,)
             .then((ans) => {
-                console.log(ans)
+                setFilteredClient(ans.data)
             }).catch(err => {
                 alert(err.message)
             })
     }
-    type array={
-        id:number,
-        username:string,
-        email:string,
-        phone:string,
-        coordinates:any
+    type array = {
+        id: number,
+        username: string,
+        email: string,
+        phone: string,
+        coordinates: any
     }
     return (
         <MainContainer>
@@ -51,11 +51,13 @@ export default function ClientsList() {
             </ClientsResearch>
 
             {clientsA.length === 0 && <p>Ainda não existem clientes cadastrados :'(</p>}
-            <ClientsContainer>
-                {clientsA.map((array:array) =>
+            {filteredClient.length === 0 && <ClientsContainer>
+                {clientsA.map((array: array) =>
                     (<ClientsCard key={array.id} array={array} />))}
-            </ClientsContainer>
-
+            </ClientsContainer>}
+            {filteredClient.length !== 0 &&  <ClientsContainer>
+                <ClientsCard array={filteredClient} />
+            </ClientsContainer>}
         </MainContainer>
     )
 }

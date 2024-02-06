@@ -23,7 +23,6 @@ export default function RegisterClient() {
         e.preventDefault()
         axios.post(`https://clientserviceapi.onrender.com/registerclient`, form)
             .then((ans) => {
-                console.log(ans)
                 setForm({ username: "", phone: "", email: "", coordx: "", coordy: "" })
             }).catch(err => {
                 alert(err.message)

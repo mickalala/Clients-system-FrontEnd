@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { arrayclients } from "../assets/clientstype";
 
 export default function ClientsCard({ array }: any) {
     return (
