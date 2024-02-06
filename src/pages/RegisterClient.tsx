@@ -22,7 +22,7 @@ export default function RegisterClient() {
     function sendForm(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         e.preventDefault()
         axios.post(`https://clientserviceapi.onrender.com/registerclient`, form)
-            .then((ans) => {
+            .then(() => {
                 setForm({ username: "", phone: "", email: "", coordx: "", coordy: "" })
             }).catch(err => {
                 alert(err.message)
