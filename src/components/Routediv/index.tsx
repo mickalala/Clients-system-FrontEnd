@@ -21,13 +21,14 @@ export default function Routediv() {
     return (
     <>
         <button onClick={()=>setOpen(!open)}> dist</button>
-        <MainContainer open={open}>
+       {open==true && <MainContainer >
             <h1>Rota calculada da primeira parada até a ultima antes de voltar à sede:</h1>
             {route.map((s) =>
                 (<p>*{s}</p>)
             )}
             <p>distância percorrida: {distance}</p>
         </MainContainer>
+        }
         </>
     )
 }
@@ -42,5 +43,5 @@ const MainContainer = styled.div`
     left:50%;
     box-shadow: 24;
     align-self:center;
-    display:${(props) => (props.open) ? "" : "none"}
+   
 `

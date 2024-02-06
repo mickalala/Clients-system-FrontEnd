@@ -32,6 +32,13 @@ export default function ClientsList() {
                 alert(err.message)
             })
     }
+    type array={
+        id:number,
+        username:string,
+        email:string,
+        phone:string,
+        coordinates:any
+    }
     return (
         <MainContainer>
             <h1>Pegue as informações do seu cliente aqui!</h1>
@@ -45,7 +52,7 @@ export default function ClientsList() {
 
             {clientsA.length === 0 && <p>Ainda não existem clientes cadastrados :'(</p>}
             <ClientsContainer>
-                {clientsA.map((array) =>
+                {clientsA.map((array:array) =>
                     (<ClientsCard key={array.id} array={array} />))}
             </ClientsContainer>
 
